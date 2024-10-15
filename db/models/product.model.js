@@ -57,8 +57,15 @@ const productSchema=new Schema({
         min:1,
         max:5
     }
-},{timestamps:true,versionKey:false})
+},{timestamps:true,versionKey:false,toJSON:{virtuals:true},toObject:{virtuals:true}})
 productSchema.methods.inStock=function(quantity){
     return this.stock>=quantity?true:false
 }
+productSchema.virtual("finalPrice").get(function (){
+    if(this.discountType==discountTypes.FIXED_AMOUNT){
+        return this.price-this.discount
+    }else{
+        return this.price-(this.price*(this.discount||0))/100
+    }
+})
 export const Product=model("Product",productSchema)

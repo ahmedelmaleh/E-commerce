@@ -12,7 +12,8 @@ Object.freeze(roles)
 export const status={
     VERIFIED:"verified",
     PENDING:"pending",
-    BLOCKED:"blocked"
+    BLOCKED:"blocked",
+    DELETED:"delete"
 }
 Object.freeze(status)
 export const couponTypes={
@@ -20,3 +21,18 @@ export const couponTypes={
     PERCENTAGE:"percentage"
 }
 Object.freeze(couponTypes)
+
+export const orderStatus={
+    PLACED:"placed",
+    SHIPPING:"shipping",
+    DELIVERED:"delivered",
+    CANCELED:"canceled",
+    REFUNDED:"refunded"
+} 
+Object.freeze(orderStatus)
+
+export const paymentMethod={
+    CASH:"cash",
+    VISA:"visa"
+}
+Object.freeze(paymentMethod)

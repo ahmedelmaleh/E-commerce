@@ -11,6 +11,7 @@ import reviewRouter from './review/review.router.js'
 import couponRouter from './coupon/coupon.router.js'
 import cartRouter from './cart/cart.router.js'
 import userRouter from './user/user.router.js'
+import orderRouter from './order/order.router.js'
 
 export const bootstrap=(app)=>{
     app.use(express.json())
@@ -26,6 +27,7 @@ export const bootstrap=(app)=>{
     app.use('/api/coupon',couponRouter)
     app.use('/api/cart',cartRouter)
     app.use('/api/user',userRouter)
+    app.use('/api/order',orderRouter)
     app.use(globalHandler)
 
 
